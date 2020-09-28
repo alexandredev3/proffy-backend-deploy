@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules --ignore-watch __tests__ src/server.ts",
+    "start": "node dist/src/server.js",
+    "knex:migrate": "knex --knexfile ./knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile ./knexfile.ts migrate:rollback",
+    "queue:dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/queue.ts",
+    "queue": "ts-node-transpile-only src/queue.ts",
+    "pretest": "NODE_ENV=test knex --knexfile ./knexfile.ts migrate:latest",
+    "test": "NODE_ENV=test jest --runInBand --forceExit",
+    "posttest": "NODE_ENV=test knex --knexfile ./knexfile.ts migrate:rollback --all"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0",
+    "prettier": "^2.0.5",
+    "sqlite3": "^5.0.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bull": "^3.18.0",
+    "bull-board": "^0.9.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.0.0-beta.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.2",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.11",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "pg": "^8.3.0"
+  }
+}
