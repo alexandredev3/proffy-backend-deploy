@@ -10,8 +10,8 @@ const path_1 = require("path");
 dotenv_1.default.config({
   path:
     process.env.NODE_ENV === "test"
-      ? path_1.resolve(__dirname, "..", "..", "..", ".env.test")
-      : path_1.resolve(__dirname, "..", "..", "..", ".env"),
+      ? path_1.resolve(__dirname, "..", "..", ".env.test")
+      : path_1.resolve(__dirname, "..", "..", ".env"),
 });
 exports.default = {
   development: {
