@@ -4,15 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules --ignore-watch __tests__ src/server.ts",
-    "start": "node dist/src/server.js",
-    "knex:migrate": "knex --knexfile ./knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile ./knexfile.ts migrate:rollback",
-    "queue:dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/queue.ts",
-    "queue": "ts-node-transpile-only src/queue.ts",
-    "pretest": "NODE_ENV=test knex --knexfile ./knexfile.ts migrate:latest",
-    "test": "NODE_ENV=test jest --runInBand --forceExit",
-    "posttest": "NODE_ENV=test knex --knexfile ./knexfile.ts migrate:rollback --all"
+    "start": "node src/server.js",
+    "knex:migrate": "knex --knexfile ./knexfile.js migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile ./knexfile.js migrate:rollback",
+    "queue": "node src/queue.js"
   },
   "devDependencies": {
     "faker": "^5.1.0",
