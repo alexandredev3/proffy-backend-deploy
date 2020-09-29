@@ -16,6 +16,7 @@ dotenv_1.default.config({
 
 const dbConnection = {
   development: {
+    dialect: process.env.DB_CLIENT,
     client: process.env.DB_CLIENT,
     connection: process.env.DATABASE_URL,
     migrations: {
