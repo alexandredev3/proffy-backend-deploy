@@ -1,1 +1,1 @@
-web: yarn start; knex:migrate
+web: yarn start
