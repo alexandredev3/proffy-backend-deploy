@@ -15,6 +15,7 @@ dotenv_1.default.config({
 });
 exports.default = {
   development: {
+    dialect: process.env.DB_CLIENT,
     client: process.env.DB_CLIENT,
     connection: process.env.DATABASE_URL,
   },

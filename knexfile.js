@@ -14,7 +14,7 @@ dotenv_1.default.config({
       : path_1.resolve(__dirname, ".env"),
 });
 
-const databaseConnection = {
+exports.default = {
   development: {
     client: process.env.DB_CLIENT,
     connection: process.env.DATABASE_URL,
@@ -23,5 +23,3 @@ const databaseConnection = {
     },
   },
 };
-
-exports.default = databaseConnection;
