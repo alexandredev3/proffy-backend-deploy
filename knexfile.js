@@ -16,7 +16,7 @@ dotenv_1.default.config({
 
 module.exports = {
   development: {
-    client: process.env.DB_CLIENT,
+    client: "pg",
     connection: process.env.DATABASE_URL,
     migrations: {
       directory: path_1.resolve(__dirname, "src", "database", "migrations"),

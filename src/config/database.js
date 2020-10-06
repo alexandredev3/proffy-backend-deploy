@@ -15,11 +15,7 @@ dotenv_1.default.config({
 });
 exports.default = {
   development: {
-    client: process.env.DB_CLIENT,
-    connection: process.env.DATABASE_URL,
-  },
-  test: {
-    client: process.env.DB_CLIENT_TEST,
+    client: "pg",
     connection: process.env.DATABASE_URL,
   },
 };
